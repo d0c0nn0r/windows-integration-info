@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2B447217-234A-4B83-859E-A10759690F93}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DCOM</RootNamespace>
+    <AssemblyName>WinDevOps</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Accounts\AccountUtils.cs" />
+    <Compile Include="DCOM Management\DCOMAce.cs" />
+    <Compile Include="DCOM Management\DCOMApplication.cs" />
+    <Compile Include="DCOM Management\DcomApplicationRunAs.cs" />
+    <Compile Include="DCOM Management\DCOMGlobal.cs" />
+    <Compile Include="DCOM Management\DCOMProtocol.cs" />
+    <Compile Include="DCOM Management\EnumLegacyAuthenticationLevel.cs" />
+    <Compile Include="DCOM Management\EnumLegacyImpersonationLevel.cs" />
+    <Compile Include="DCOM Management\Enums.cs" />
+    <Compile Include="DCOM Management\DcomUtils.cs" />
+    <Compile Include="File Management\CompressionUtils.cs" />
+    <Compile Include="File Management\FileUtils.cs" />
+    <Compile Include="Global\StringEqualNullEmptyComparer.cs" />
+    <Compile Include="Global\FileOperations.cs" />
+    <Compile Include="Global\RegistryFunctions.cs" />
+    <Compile Include="Process\ProcessUtils.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Software Management\SoftwareProgram.cs" />
+    <Compile Include="Software Management\SoftwareUtils.cs" />
+    <Compile Include="WMI\BIOSProperties.cs" />
+    <Compile Include="WMI\ChassisProperties.cs" />
+    <Compile Include="WMI\ComputerInformation.cs" />
+    <Compile Include="WMI\ComputerProperties.cs" />
+    <Compile Include="WMI\DiskProperties.cs" />
+    <Compile Include="WMI\MemoryArrayProperties.cs" />
+    <Compile Include="WMI\MemoryProperties.cs" />
+    <Compile Include="WMI\NDIS_PACKET_TYPE.cs" />
+    <Compile Include="WMI\NetworkCardProperties.cs" />
+    <Compile Include="WMI\Net_Connection_Status.cs" />
+    <Compile Include="WMI\OSProperties.cs" />
+    <Compile Include="WMI\ProcessorProperties.cs" />
+    <Compile Include="WMI\TimeProperties.cs" />
+    <Compile Include="WMI\WMIUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="COMAdmin">
+      <Guid>{F618C513-DFB8-11D1-A2CF-00805FC79235}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.DirectoryServices, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Management, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DotNetZip">
+      <Version>1.12.0</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
