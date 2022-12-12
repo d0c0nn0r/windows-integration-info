@@ -13,7 +13,7 @@ No other auxiliary dependencies exist.
 
 Build will produce 2 artifacts on every build:
 
-1. windevops.cli.exe
+1. win-int-info.cli.exe
 
     - This is a compiled executable, with all auxiliary dll's merged so that the entire program can be delivered as a single .exe.
     - This .exe is portable, and can be run directly from the cmdline on any machine without any installation (provided .NET 3.5 is installed)
@@ -21,13 +21,13 @@ Build will produce 2 artifacts on every build:
 2. Release.zip
 
 - This is a zip of all the application build files, for posterity.
-- Only the windevops.cli.exe should be used
+- Only the win-int-info.cli.exe should be used
 
 ## Use
 
 The command line tool help can be accessed as shown in the below gif.
 
-![cli gif](./Images/windevops.cli.gif)
+![cli gif](./Images/cmdline.gif)
 
 ## What it does
 
@@ -99,7 +99,7 @@ The registry key, and all subkeys, relating to local ODBC DNS settings
 
 A pre-built example [batch file](./gatherLocal.bat) is provided.
 
-- Copy the windevops.cli.exe to any machine, 
+- Copy the win-int-info.cli.exe to any machine, 
 - Copy or manually recreate this [batch file](./gatherLocal.bat).
 - Open a cmd shell, and execute the batch file
 - Copy all files created in the "C:\temp\piInfoGathering" 
